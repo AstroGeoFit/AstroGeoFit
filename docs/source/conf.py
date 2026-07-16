@@ -12,9 +12,9 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information
 project = 'AstroGeoFit'
-copyright = '2025, CNRS -- Contact: astrogeofit@astrogeo.eu'
+copyright = '2025-2026, CNRS -- Contact: astrogeofit@astrogeo.eu'
 author = 'Jacques Laskar et al. (CNRS)'
-release = '1.0'
+release = '1.1'
 
 # -- General configuration
 extensions = [
@@ -31,6 +31,6 @@ html_css_files = ['custom.css']
 
 # Your custom footer content
 html_context = {
-    "custom_footer": "2025, CNRS<br>Contact: <a href='mailto:astrogeofit@astrogeo.eu'>astrogeofit@astrogeo.eu</a>"
+    "custom_footer": "2025-2026, CNRS<br>Contact: <a href='mailto:astrogeofit@astrogeo.eu'>astrogeofit@astrogeo.eu</a>"
 }
 

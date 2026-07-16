@@ -1,11 +1,8 @@
 AstroGeoFit
 ===========
 
-.. image:: https://img.shields.io/badge/python-3.11%2B-blue
-   :alt: Python Version
 
-.. image:: https://img.shields.io/badge/license-GPLv3-blue
-    :alt: License
+![Python version](https://img.shields.io/badge/python-3.11%2B-blue)  ![License](https://img.shields.io/badge/license-GPLv3-blue) [![Documentation](https://img.shields.io/badge/GitHub%20Pages-Documentation-blue?logo=github)](https://astrogeofit.github.io/AstroGeoFit/)
 
 AstroGeoFit is an Astronomical Calibration Tool for the Geological Time Scale,
 developed as part of the AstroGeo project funded by the European Research Council (ERC)
@@ -32,7 +29,8 @@ documentation found in the <ADD DOCUMENTATION LINK>.
 Documentation
 -------------
 
-Full documentation is available in the `docs/html/index.html` directory or online <ADD DOCUMENTATION LINK>.
+Full documentation is available on [GitHub Pages](https://astrogeofit.github.io/AstroGeoFit/) or [astrogeo.eu](https://www.astrogeo.eu/astrogeofit-doc/).
+The source of the documentation is available in the `docs/source` directory.
 
 Citation
 --------
@@ -48,7 +46,7 @@ License
 -------
 
 This software is licensed under the GNU GPL 3.0.s
-Copyright (c) 2025 CNRS
+Copyright (c) 2025-2026 CNRS
 Lead author : Jacques Laskar
 
 Authors and Contributors
@@ -82,5 +80,5 @@ research and innovation program (Advanced Grant AstroGeo-885250).
 Requests and Inquiries
 ----------------------
 
-For any request or inquirie please address to: `astrogeofit@astrogeo.eu <mailto:astrogeofit@astrogeo.eu>`_.
+For any request or inquiry please address to: [astrogeofit@astrogeo.eu](mailto:astrogeofit@astrogeo.eu).
 
