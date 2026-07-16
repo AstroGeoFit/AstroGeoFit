@@ -1,0 +1,28 @@
+name: Deploy AstroGeoFit user documentation to Pages
+# use the github actions/
+# https://github.com/sphinx-notes/pages
+# https://github.com/marketplace/actions/sphinx-to-github-pages
+
+# Runs on pushes targeting the default branch
+on:
+  push:
+    branches: [dev_github_pages,main]
+
+# Cancel any in-progress job or run
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#concurrency
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+    - id: deployment
+      uses: sphinx-notes/pages@v3
