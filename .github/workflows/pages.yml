@@ -27,6 +27,6 @@ jobs:
     - id: deployment
       uses: sphinx-notes/pages@v3
       with:
-        publish: true
+        publish: false
         sphinx_build_options: 'source build'
         artifact: docs/build/html/
