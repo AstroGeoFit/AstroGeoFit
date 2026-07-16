@@ -24,7 +24,7 @@ Download *AstroGeoFit*
 ----------------------
 
 To install AstroGeoFit, download the package from the [package link](https://www.astrogeo.eu/wp-content/astrogeofit/astrogeofit_latest.zip) and follow the instructions of the official
-documentation found in the <ADD DOCUMENTATION LINK>.
+documentation found in the [documentation link](https://www.astrogeo.eu/astrogeofit-doc/).
 
 Documentation
 -------------
