@@ -124,6 +124,11 @@ Lead author : Jacques Laskar
 Authors and Contributors
 ------------------------
 
+**Present Code maintainers**:
+
+- Pau Bujons – Software engineering 
+- Mickael Gastineau – Software engineering 
+
 **Primary code developers**:
 
 - Nam Hoang – Algorithm design and initial prototype

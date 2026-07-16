@@ -45,8 +45,8 @@ Hoang, N., Laskar, J., Hara, N., Wu, Y., Sultanov, A., Sinnesael, M., Westerhold
 License
 -------
 
-This software is licensed under the GNU GPL 3.0.s
-Copyright (c) 2025-2026 CNRS
+This software is licensed under the GNU GPL 3.0.\
+Copyright (c) 2025-2026 CNRS\
 Lead author : Jacques Laskar
 
 Authors and Contributors
