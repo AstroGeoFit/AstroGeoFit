@@ -26,3 +26,7 @@ jobs:
     steps:
     - id: deployment
       uses: sphinx-notes/pages@v3
+      with:
+        publish: true
+        sphinx_build_options: 'source build'
+        artifact: docs/build/html/
