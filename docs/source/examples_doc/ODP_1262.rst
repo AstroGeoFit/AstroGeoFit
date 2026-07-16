@@ -1,0 +1,63 @@
+.. _odp_1262_example:
+
+ODP 1262
+========
+
+.. image:: https://img.shields.io/badge/python-3.11%2B-blue
+    :alt: Python Version
+
+.. image:: https://img.shields.io/badge/license-GPLv3-blue
+    :alt: License
+
+
+The sites recovered during ODP Leg 208 at Walvis Ridge in the southeast Atlantic Ocean provide a classic and continuous record of climate change throughout the Cenozoic (Zachos, 2004). 
+These sediments contain well-preserved signals of astronomical climate forcing (e.g., Liebrand et al., 2017; Westerhold et al., 2020; Drury et al., 2021). In particular, the stratigraphic interval between 
+the Elmo event and the Paleocene-Eocene Thermal Maximum (PETM), approximately 54–56 Ma, at Site 1262 serves as a key reference for reconstructing past variations in eccentricity from geological data.
+
+-----
+
+Files in the *data* folder
+--------------------------
+
+- **ODP1262.csv**: Data of the ODP_926 site.
+
+- **Table_S1_AgeModel.txt**
+
+-----
+
+Execute the Example
+-------------------
+
+.. note::
+    - The folder `examples` has to bee in the same directory as the `AstroGeoFit_tool.py` file. If not, this will not work.
+
+To run the example, open a terminal in the `AstroGeoFit` folder. Once this is open execute the following
+
+.. code-block:: bash
+
+    python AstroGeoFit_tool.py --odp_1262
+
+This command will execute the significance test, the genetic algorithm fitting, the MCMC, and the MCMC weights calculation.
+
+If you only want to run specific components (e.g., the genetic algorithm fitting and the MCMC), you can use:
+
+.. code-block:: bash
+
+    python AstroGeoFit_tool.py --odp_1262 -fit -mcmc
+
+The full list of execution options can be found in :ref:`tool_documentation`
+
+-----
+
+Visualization of the Results
+----------------------------
+
+To visualize the results, you can use the two Jupyter notebooks provided. To obtain the results of the `ODP_1262` data, just modify the variable `configuration_file_path` in the following way:
+
+.. code-block:: python
+
+    configuration_file_path = "odp_1262"
+
+And then the visualization notebook will be ready to be executed.
+
+For a detailed guide on using the notebooks and interpreting the figures, please refer to :ref:`visualization-results`.

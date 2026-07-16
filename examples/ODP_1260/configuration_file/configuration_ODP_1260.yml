@@ -1,0 +1,90 @@
+data_set:
+  data_path: ./examples/ODP_1260/data/ODP1260.txt
+  depth_column_name: depth                                
+  proxy_column_name: proxy                                
+  skiprows: 0                                             
+  delimiter: " "
+  header: True
+
+age_depth_model_data:
+  data_path: ./examples/ODP_1260/data/ggge20293-sup-0011-suppinfo06.txt
+  depth_column_name: Depth (rmcd)
+  age_column_name: La2004 age (Ma)
+  skiprows: 0
+  delimiter: ','
+  header: True
+
+eccentricity_solution_data:
+  data_path: ./examples/ODP_1260/data/La2010b_ecc3L.dat
+  age_column_name: 
+  eccentricity_column_name: 
+  skiprows: 0
+  delimiter: \s+
+  header: False
+  start_time: 0e3
+  final_time: 70e3
+
+data_model_parameters:
+  sedimentation_rate_min: 1
+  sedimentation_rate_max: 5
+
+  #unit: arcsec/yr
+  ### gi frequencies should be strictly in the order of g1, g2, g3, g4.
+  frequency_values:
+    use_precession: True
+    use_eccentricity: True
+    use_tilt: False
+
+    p0_values: [50,55]
+    gi_values: [[5.25, 5.75], [7.43, 7.48], [17.1, 17.5], [17.6, 18.3]]
+    si_values: 
+
+    g5_value: default
+    s6_value: default
+  
+genetic_algorithm_parameters:
+  seed: 
+  interpolator: default
+  metric_type: loglike
+  population_size: 300
+  number_generations: 300
+  number_processors_used: 50
+  number_algorithm_solutions: 50
+  list_number_genes: [ 2,  4,  8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96]
+
+mcmc_parameters:
+  length_mcmc_chains: 5000
+  discard: 2000
+  thin: 50
+  number_processors_used_mcmc: 30
+  number_mcmc_solutions: 30
+  list_of_genes_mcmc: [2, 12, 24, 26, 48, 60, 72, 84, 96]
+  prior_distributions: 
+    p0_distribution: gaussian
+    gi_distribution: gaussian
+    si_distribution: 
+  prior_frequencies:
+    p0_prior: [51.544155,1]
+    gi_prior: [[5.75942, 0.09195], [7.44772, 0.00805], [17.26914, 0.04597], [17.89635, 0.04809]]
+    si_prior: []
+
+weight_calcula_configuration:
+  number_weight_evaluation_per_chain: 20
+  number_processors_used_weights: 96
+  stability_factor: 1e-8
+  pareto_smoothing: False
+
+significance_test_parameters:
+  seed:
+  interpolator: linear
+  metric_type: loglike
+  population_size: 200
+  number_generations: 200
+  number_processors_used: 96
+  number_algorithm_executions: 1000
+  number_noise_executions: 1000
+  list_number_genes: [2, 12, 24, 36]
+
+# ------------------- OUTPUT FILE TO GET THE RESULTS ------------------------ #
+output_folder: ./examples/ODP_1260/results
+output_file_name: results_ODP_1260

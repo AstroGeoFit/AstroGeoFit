@@ -1,0 +1,90 @@
+data_set:
+  data_path:
+  depth_column_name:                             
+  proxy_column_name:                                
+  skiprows:                                             
+  delimiter:
+  header:
+
+age_depth_model_data:
+  data_path:
+  depth_column_name:
+  age_column_name:
+  skiprows:
+  delimiter:
+  header:
+
+eccentricity_solution_data:
+  data_path:
+  age_column_name: 
+  eccentricity_column_name: 
+  skiprows:
+  delimiter:
+  header:
+  start_time:
+  final_time:
+
+data_model_parameters:
+  sedimentation_rate_min:
+  sedimentation_rate_max:
+
+  #unit: arcsec/yr
+  ### gi frequencies should be strictly in the order of g1, g2, g3, g4.
+  frequency_values:
+    use_precession:
+    use_eccentricity:
+    use_tilt:
+
+    p0_values:
+    gi_values:
+    si_values:
+
+    g5_value:
+    s6_value:
+
+genetic_algorithm_parameters:
+  seed: 
+  interpolator:
+  metric_type:
+  population_size:
+  number_generations:
+  number_processors_used:
+  number_algorithm_solutions:
+  list_number_genes:
+
+mcmc_parameters:
+  length_mcmc_chains:
+  discard:
+  thin:
+  number_processors_used_mcmc:
+  number_mcmc_solutions:
+  list_of_genes_mcmc:
+  prior_distributions: 
+    p0_distribution:
+    gi_distribution:
+    si_distribution:
+  prior_frequencies:
+    p0_prior:
+    gi_prior:
+    si_prior:
+
+weight_calcula_configuration:
+  number_weight_evaluation_per_chain:
+  number_processors_used_weights:
+  stability_factor:
+  pareto_smoothing:
+
+significance_test_parameters:
+  seed:
+  interpolator:
+  metric_type:
+  population_size:
+  number_generations:
+  number_processors_used:
+  number_algorithm_executions:
+  number_noise_executions:
+  list_number_genes:
+  
+# ------------------- OUTPUT FILE TO GET THE RESULTS ------------------------ #
+output_folder:
+output_file_name:

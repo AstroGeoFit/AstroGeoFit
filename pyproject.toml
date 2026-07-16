@@ -1,0 +1,20 @@
+[build-system]
+requires = [ "setuptools", "wheel",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "astrogeofit"
+version = "1.0"
+description = "AstroGeoFit is an advanced software tool designed to construct astronomical time scales for geological stratigraphic records"
+readme = "docs/source/README.md"
+requires-python = ">=3.9"
+dependencies = [ "numpy>=1.20.0,<2.0", "scipy>=1.5.4", "matplotlib>=3.3.4", "scikit-learn>=0.24.2", "statsmodels>=0.12.2", "pynverse>=0.1.0", "schwimmbad==0.4.2", "line-profiler>=3.3.0", "pandas>=1.3.6", "colorama>=0.4.4", "joblib>=0.17.0", "openpyxl>=3.0.9", "PyYAML>=5.4.1", "click>=7.1.2", "pymoo>=0.5.0", "emcee>=3.1.2", "dill>=0.3.3", "SciencePlots>=1.0.0", "pillow>=8.0.1", "notebook>=6.0.3", "furo>=2021.9.1", "sphinx>=3.5.0", "tqdm>=4.50.0",]
+[[project.authors]]
+name = "Jacques Laskar"
+
+[[project.authors]]
+name = "Pau Bujons Lario"
+email = "pau.bujons@obspm.fr"
+
+[project.license]
+text = "MIT"

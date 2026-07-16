@@ -1,0 +1,138 @@
+/* DATA DESCRIPTION:
+Citation:,Westerhold, Thomas; Röhl, Ursula; Donner, Barbara; Zachos, James C (2018): (Table S1) Age model of ODP Site 198-1209. PANGAEA, https://doi.org/10.1594/PANGAEA.890987, 
+,In supplement to: Westerhold, T et al. (2018): Global extent of early eocene hyperthermal events - a new Pacific benthic foraminiferal isotope record from Shatsky Rise (ODP Site 1209). Paleoceanography and Paleoclimatology, 33(6), 626-642, https://doi.org/10.1029/2017PA003306
+Further details:,Dinarès-Turell, Jaume; Westerhold, Thomas; Pujalte, Victoriano; Röhl, Ursula; Kroon, Dick (2014): Astronomical calibration of the Danian stage (Early Paleocene) revisited: Settling chronologies of sedimentary records across the Atlantic and Pacific Oceans. Earth and Planetary Science Letters, 405, 119-131, https://doi.org/10.1016/j.epsl.2014.08.027
+,Westerhold, Thomas; Röhl, Ursula; Raffi, Isabella; Fornaciari, Eliana; Monechi, Simonetta; Reale, Viviana; Bowles, Julie; Evans, Helen F (2008): Astronomical calibration of the Paleocene time. Palaeogeography, Palaeoclimatology, Palaeoecology, 257(4), 377-403, https://doi.org/10.1016/j.palaeo.2007.09.016
+Project(s):,Ocean Drilling Program (ODP) (URI: http://www-odp.tamu.edu/)
+Coverage:,LATITUDE: 32.651700 * LONGITUDE: 158.505983
+,DATE/TIME START: 2001-09-18T00:00:00 * DATE/TIME END: 2001-09-23T00:00:00
+,MINIMUM DEPTH, sediment/rock: 156.39 m * MAXIMUM DEPTH, sediment/rock: 261.58 m
+Event(s):,198-1209 * LATITUDE: 32.651700 * LONGITUDE: 158.505983 * DATE/TIME START: 2001-09-18T00:00:00 * DATE/TIME END: 2001-09-23T00:00:00 * ELEVATION: -2387.3 m * Penetration: 865.1 m * Recovery: 766 m * LOCATION: North Pacific Ocean * CAMPAIGN: Leg198 (URI: https://doi.org/10.2973/odp.proc.ir.198.2002) * BASIS: Joides Resolution (URI: http://www-odp.tamu.edu/resolutn.html) * METHOD/DEVICE: Composite Core (COMPCORE) * COMMENT: 83 cores; 759.4 m cored; 105.7 m drilled; 100.9% recovery
+Parameter(s):,DEPTH, sediment/rock [m] (Depth sed) * GEOCODE * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+,Age model [ka] (Age model) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+,Age, comment (Comm) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+,Reference/source (Reference) * PI: Westerhold, Thomas (https://orcid.org/0000-0001-8151-4684, twesterhold@marum.de, http://www.marum.de/Thomas_Westerhold.html)
+License:,Creative Commons Attribution 3.0 Unported (CC-BY-3.0) (URI: https://creativecommons.org/licenses/by/3.0/)
+Size:,360 data points
+*/
+Depth,Age,Comm,Reference
+156.39,43512,tuned to Atlantic composite,this study
+156.74,43615,tuned to Atlantic composite,this study
+158.04,43895,tuned to Atlantic composite,this study
+162.90,45079,tuned to Atlantic composite,this study
+164.76,45492,tuned to Atlantic composite,this study
+165.40,45572,tuned to Atlantic composite,this study
+170.16,46391,tuned to Atlantic composite,this study
+172.16,46741,tuned to Atlantic composite,this study
+174.58,47243,tuned to Atlantic composite,this study
+176.88,47661,tuned to Atlantic composite,this study
+178.48,47949,tuned to Atlantic composite,this study
+181.05,48371,tuned to Atlantic composite,this study
+181.65,48545,tuned to Atlantic composite,this study
+184.75,49159,tuned to Atlantic composite,this study
+186.87,49560,tuned to Atlantic composite,this study
+187.55,49686,tuned to Atlantic composite,this study
+189.05,49865,tuned to Atlantic composite,this study
+189.90,49950,tuned to Atlantic composite,this study
+190.60,50068,tuned to Atlantic composite,this study
+192.66,50365,tuned to Atlantic composite,this study
+193.66,50498,tuned to Atlantic composite,this study
+194.60,50680,tuned to Atlantic composite,this study
+195.24,50770,tuned to Atlantic composite,this study
+195.70,50865,tuned to Atlantic composite,this study
+196.32,50950,tuned to Atlantic composite,this study
+196.70,51033,tuned to Atlantic composite,this study
+197.30,51141,tuned to Atlantic composite,this study
+197.95,51193,tuned to Atlantic composite,this study
+198.98,51346,tuned to Atlantic composite,this study
+199.58,51458,tuned to Atlantic composite,this study
+200.01,51556,tuned to Atlantic composite,this study
+201.21,51846,tuned to Atlantic composite,this study
+202.01,51970,tuned to Atlantic composite,this study
+202.31,52014,tuned to Atlantic composite,this study
+202.57,52055,tuned to Atlantic composite,this study
+203.16,52190,tuned to Atlantic composite,this study
+203.50,52251,tuned to Atlantic composite,this study
+204.21,52375,tuned to Atlantic composite,this study
+204.71,52470,tuned to Atlantic composite,this study
+205.10,52540,tuned to Atlantic composite,this study
+205.43,52612,tuned to Atlantic composite,this study
+206.18,52745,tuned to Atlantic composite,this study
+206.71,52833,tuned to Atlantic composite,this study
+206.91,52882,tuned to Atlantic composite,this study
+207.17,52935,tuned to Atlantic composite,this study
+207.29,52956,tuned to Atlantic composite,this study
+208.49,53213,tuned to Atlantic composite,this study
+208.71,53243,tuned to Atlantic composite,this study
+209.96,53534,tuned to Atlantic composite,this study
+210.20,53575,tuned to Atlantic composite,this study
+210.54,53658,tuned to Atlantic composite,this study
+210.65,53670,tuned to Atlantic composite,this study
+210.74,53683,tuned to Atlantic composite,this study
+210.99,53758,tuned to Atlantic composite,this study
+211.41,53865,tuned to Atlantic composite,this study
+211.85,53954,tuned to Atlantic composite,this study
+212.50,54053,tuned to Atlantic composite,this study
+213.41,54463,tuned to Atlantic composite,this study
+214.11,54744,tuned to Atlantic composite,this study
+214.31,54853,tuned to Atlantic composite,this study
+214.76,54978,tuned to Atlantic composite,this study
+214.98,55058,tuned to Atlantic composite,this study
+216.03,55368,tuned to Atlantic composite,this study
+216.66,55588,tuned to Atlantic composite,this study
+216.86,55650,tuned to Atlantic composite,this study
+217.16,55722,tuned to Atlantic composite,this study
+217.65,55817,tuned to Atlantic composite,this study
+218.00,55930,onset-PETM,Westerhold et al. 2008
+219.11,56148,tuned to 1262,Westerhold et al. 2008
+220.96,56751,tuned to 1262,Westerhold et al. 2008
+221.26,56856,tuned to 1262,Westerhold et al. 2008
+222.13,56962,tuned to 1262,Westerhold et al. 2008
+223.76,57238,tuned to 1262,Westerhold et al. 2008
+224.54,57362,tuned to 1262,Westerhold et al. 2008
+226.80,57660,tuned to 1262,Westerhold et al. 2008
+230.08,58119,tuned to 1262,Westerhold et al. 2008
+231.86,58464,tuned to 1262,Westerhold et al. 2008
+234.00,58860,tuned to 1262,Westerhold et al. 2008
+234.69,59129,tuned to 1262,Westerhold et al. 2008
+235.01,59273,tuned to 1262,Westerhold et al. 2008
+235.33,59372,tuned to 1262,Westerhold et al. 2008
+235.85,59477,tuned to 1262,Westerhold et al. 2008
+237.02,59765,tuned to 1262,Westerhold et al. 2008
+237.98,59943,tuned to 1262,Westerhold et al. 2008
+238.82,60147,tuned to 1262,Westerhold et al. 2008
+240.78,60482,tuned to 1262,Westerhold et al. 2008
+243.21,61191,tuned to 1262,Westerhold et al. 2008
+243.77,61377,tuned to 1262,Westerhold et al. 2008
+245.61,61679,tuned to 1262,Westerhold et al. 2008
+247.24,61941,tuned to 1262,Westerhold et al. 2008
+248.05,62093,tuned to 1262,Westerhold et al. 2008
+249.86,62510,tuned to 1262,Dinares-Turell et al. 2014
+251.23,62917,tuned to 1262,Dinares-Turell et al. 2014
+252.52,63324,tuned to 1262,Dinares-Turell et al. 2014
+253.07,63703,tuned to 1262,Dinares-Turell et al. 2014
+253.15,63731,tuned to 1262,Dinares-Turell et al. 2014
+253.37,63808,tuned to 1262,Dinares-Turell et al. 2014
+253.69,63901,tuned to 1262,Dinares-Turell et al. 2014
+254.12,63990,tuned to 1262,Dinares-Turell et al. 2014
+254.51,64096,tuned to 1262,Dinares-Turell et al. 2014
+254.80,64201,tuned to 1262,Dinares-Turell et al. 2014
+255.10,64308,tuned to 1262,Dinares-Turell et al. 2014
+255.47,64425,tuned to 1262,Dinares-Turell et al. 2014
+255.61,64528,tuned to 1262,Dinares-Turell et al. 2014
+255.92,64635,tuned to 1262,Dinares-Turell et al. 2014
+256.40,64735,tuned to 1262,Dinares-Turell et al. 2014
+256.84,64832,tuned to 1262,Dinares-Turell et al. 2014
+257.10,64932,tuned to 1262,Dinares-Turell et al. 2014
+257.54,65035,tuned to 1262,Dinares-Turell et al. 2014
+258.18,65132,tuned to 1262,Dinares-Turell et al. 2014
+258.36,65225,tuned to 1262,Dinares-Turell et al. 2014
+258.80,65329,tuned to 1262,Dinares-Turell et al. 2014
+259.06,65434,tuned to 1262,Dinares-Turell et al. 2014
+259.64,65527,tuned to 1262,Dinares-Turell et al. 2014
+259.94,65601,tuned to 1262,Dinares-Turell et al. 2014
+260.10,65707,tuned to 1262,Dinares-Turell et al. 2014
+260.66,65812,tuned to 1262,Dinares-Turell et al. 2014
+261.12,65911,tuned to 1262,Dinares-Turell et al. 2014
+261.32,65994,tuned to 1262,Dinares-Turell et al. 2014
+261.58,66022,tuned to 1262,Dinares-Turell et al. 2014

@@ -1,0 +1,65 @@
+.. _odp_926_example:
+
+ODP 926
+=======
+
+.. image:: https://img.shields.io/badge/python-3.11%2B-blue
+    :alt: Python Version
+
+.. image:: https://img.shields.io/badge/license-GPLv3-blue
+    :alt: License
+
+ODP Site 926 was drilled at the Ceara Rise in the western equatorial Atlantic Ocean (3°43’N, 42°54’W) during Leg 154 to investigate late Cenozoic changes in the Atlantic Ocean (Curry et al., 1995). 
+The site has been extensively analyzed using cyclostratigraphy (Shackleton & Crowhurst, 1997; Shackleton et al., 1999; Zeeden et al., 2013; Wilkens et al., 2017), and its astronomically tuned timescale 
+serves as a key reference for several bioevents in the Geological Time Scale 2020 (Backman & Raffi, 1997; Wade et al., 2011; Raffi et al., 2020). 
+
+This study focuses on the 5–10 Ma interval, where the sedimentary record shows a clear astronomical imprint and minimal uncertainty in orbital parameters, 
+making it ideal for comparing extracted eccentricity curves with established astronomical solutions (Laskar et al., 2004; Laskar et al., 2011a).
+
+-----
+
+Files in the *data* Folder
+--------------------------
+
+- **ODP_926.txt**: Data of the ODP 926 site.
+- **U926_AgeModel_Wilkens_etal_2017.txt**: Age model data from Wilkens et al. (2017).
+- **La2010d_ecc3L.txt**: Astronomical solution data (eccentricity component).
+
+-----
+
+Execute the Example
+-------------------
+
+.. note::
+    - The folder `examples` has to bee in the same directory as the `AstroGeoFit_tool.py` file. If not, this will not work.
+    
+To run the example, open a terminal in the `AstroGeoFit` folder. Once this is open execute the following
+
+.. code-block:: bash
+
+    python AstroGeoFit_tool.py --odp_926
+
+This command will execute the significance test, the genetic algorithm fitting, the MCMC, and the MCMC weights calculation.
+
+If you only want to run specific components (e.g., the genetic algorithm fitting and the MCMC), you can use:
+
+.. code-block:: bash
+
+    python AstroGeoFit_tool.py --odp_926 -fit -mcmc
+
+The full list of execution options can be found in :ref:`tool_documentation`.
+
+-----
+
+Visualization of the Results
+----------------------------
+
+To visualize the results, you can use the two Jupyter notebooks provided. To obtain the results of the `ODP_926` data, just modify the variable `configuration_file_path` in the following way:
+
+.. code-block:: python
+
+    configuration_file_path = "odp_926"
+
+And then the visualization notebook will be ready to be executed.
+
+For a detailed guide on using the notebooks and interpreting the figures, please refer to :ref:`visualization-results`.

@@ -1,0 +1,65 @@
+.. _odp_1260_example:
+
+ODP 1260
+========
+
+.. image:: https://img.shields.io/badge/python-3.11%2B-blue
+    :alt: Python Version
+
+.. image:: https://img.shields.io/badge/license-GPLv3-blue
+    :alt: License
+
+
+ODP Site 1260, drilled during Leg 207 on the Demerara Rise in the tropical western Atlantic, recovered an Eocene cyclic sedimentary sequence (Erbacher et al., 2004). 
+The stratigraphy is well constrained by biostratigraphic and magnetostratigraphic data (Erbacher et al., 2004; Suganuma & Ogg, 2006; Edgar et al., 2007). 
+High-resolution XRF core scanning data, particularly Fe intensity, were produced for cyclostratigraphy by Westerhold & Röhl (2013). 
+The record exhibits a strong precession signal modulated by eccentricity, making it ideal for eccentricity reconstruction. This study focuses on the 42–44 Ma interval (magnetochrons C18r–C20r), 
+where different eccentricity solutions begin to show slight divergence.
+
+-----
+
+Files in the *data* Folder
+--------------------------
+
+- **ODP1260.txt**: Data of the ODP 1260 site.
+- **ggge20293-sup-0011-suppinfo06.txt**: Age model data from <ADD DESCRIPTION>.
+- **La2010d_ecc3L.txt**: Astronomical solution data (eccentricity component).
+
+-----
+
+Execute the Example
+-------------------
+
+.. note::
+    - The folder `examples` has to bee in the same directory as the `AstroGeoFit_tool.py` file. If not, this will not work.
+
+To run the example, open a terminal in the `AstroGeoFit` folder. Once this is open execute the following
+
+.. code-block:: bash
+
+    python AstroGeoFit_tool.py --odp_1260
+
+This command will execute the significance test, the genetic algorithm fitting, the MCMC, and the MCMC weights calculation.
+
+If you only want to run specific components (e.g., the genetic algorithm fitting and the MCMC), you can use:
+
+.. code-block:: bash
+
+    python AstroGeoFit_tool.py --odp_1260 -fit -mcmc
+
+The full list of execution options can be found in :ref:`tool_documentation`
+
+-----
+
+Visualization of the Results
+----------------------------
+
+To visualize the results, you can use the two Jupyter notebooks provided. To obtain the results of the `ODP_1260` data, just modify the variable `configuration_file_path` in the following way:
+
+.. code-block:: python
+
+    configuration_file_path = "odp_1260"
+
+And then the visualization notebook will be ready to be executed.
+
+For a detailed guide on using the notebooks and interpreting the figures, please refer to :ref:`visualization-results`.

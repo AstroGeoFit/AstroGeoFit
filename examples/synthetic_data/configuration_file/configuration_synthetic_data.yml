@@ -1,0 +1,90 @@
+data_set:
+  data_path: ./examples/synthetic_data/data/synthetic_data_ETP.txt
+  depth_column_name: depth                                
+  proxy_column_name: proxy                                
+  skiprows: 0                                             
+  delimiter: ","
+  header: True
+
+age_depth_model_data:
+  data_path: ./examples/synthetic_data/data/age_model_ETP.txt
+  depth_column_name: depth
+  age_column_name: age
+  skiprows: 0
+  delimiter: ','
+  header: True
+
+eccentricity_solution_data:
+  data_path: ./examples/synthetic_data/data/La2010d_ecc3L.dat
+  age_column_name: age
+  eccentricity_column_name: eccentricity
+  skiprows: 0
+  delimiter: \s+
+  header: True
+  start_time: 0.5e3
+  final_time: 5e3
+
+data_model_parameters:
+  sedimentation_rate_min: 0.05
+  sedimentation_rate_max: 0.33
+
+  #unit: arcsec/yr
+  ### gi frequencies should be strictly in the order of g1, g2, g3, g4.
+  frequency_values:
+    use_precession: True
+    use_eccentricity: True
+    use_tilt: True
+
+    p0_values: [48, 53]
+    gi_values: default
+    si_values: default
+
+    g5_value: default
+    s6_value: default
+
+genetic_algorithm_parameters:
+  seed: 20250604
+  interpolator: default
+  metric_type: loglike
+  population_size: 100
+  number_generations: 100
+  number_processors_used: 10
+  number_algorithm_solutions: 10
+  list_number_genes: [ 2, 4, 7, 10 ]
+
+mcmc_parameters:
+  length_mcmc_chains: 2000
+  discard: 1000
+  thin: 10
+  number_processors_used_mcmc: 6
+  number_mcmc_solutions: 6
+  list_of_genes_mcmc: [ 2, 4, 7, 10 ]
+  prior_distributions: 
+    p0_distribution: uniform
+    gi_distribution: 
+    si_distribution: 
+  prior_frequencies:
+    p0_prior: [48, 53]
+    gi_prior: 
+    si_prior:
+
+weight_calcula_configuration:
+  number_weight_evaluation_per_chain: 20
+  number_processors_used_weights: 36
+  stability_factor: 1e-8
+  pareto_smoothing: True
+
+significance_test_parameters:
+  seed: 20250604
+  interpolator: default
+  metric_type: loglike
+  population_size: 100
+  number_generations: 100
+  number_processors_used: 36
+  number_algorithm_executions: 200
+  number_noise_executions: 200
+  list_number_genes: [ 2, 7 ]
+
+# ------------------- OUTPUT FILE TO GET THE RESULTS ------------------------ #
+output_folder: ./examples/synthetic_data/results
+output_file_name: syntehtic_data_results
