@@ -117,6 +117,7 @@ def data_obtain_analysis_file_and_result_files(
         raise Exception
     
     if config_file_path:
+        print(config_file_path)
         if config_file_path == "odp_926" or config_file_path == "ODP_926":
             config_analysis = "./examples/ODP_926/configuration_file/configuration_ODP_926.yml"
         elif config_file_path == "odp_1260" or config_file_path == "ODP_1260":

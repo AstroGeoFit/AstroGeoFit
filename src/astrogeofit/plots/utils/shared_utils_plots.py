@@ -251,7 +251,10 @@ def tool_data_obtain_mcmc_results_per_a_number_of_knots(
             )
     else:
         selected_index = -1
-        selected_index_opt_results = -1
+        mcmc_genes = list_number_genes_mcmc[-1]
+        selected_index_opt_results = original_list_number_genes.index(
+                mcmc_genes
+            )
     
     # WE SELECT THE LAST SOLUTION (-1) AND AFTER THE SELECTED NUMBER OF GENES (selected_index)
     selected_opt_result = single_opt_result[selected_index_opt_results]
@@ -386,7 +389,7 @@ def tool_data_obtain_mcmc_results_per_a_number_of_knots(
 
     temp_path = f"{os.getcwd()}/tmp"
     temp_file = "temp_selection_genes"
-    temp_file_path = f"{temp_path}/{temp_file}.pickle"
+    temp_file_path = f"{temp_path}/{temp_file}"
     if os.path.exists(temp_file_path):
         os.remove(temp_file_path)
     if not os.path.exists(temp_path):

@@ -58,7 +58,7 @@ mcmc_parameters:
   thin: 50
   number_processors_used_mcmc: 30
   number_mcmc_solutions: 30
-  list_of_genes_mcmc: [2, 12, 24, 26, 48, 60, 72, 84, 96]
+  list_of_genes_mcmc: [2, 12, 24, 36, 48, 60, 72, 84, 96]
   prior_distributions: 
     p0_distribution: gaussian
     gi_distribution: gaussian

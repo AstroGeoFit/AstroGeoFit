@@ -70,7 +70,7 @@ mcmc_parameters:
 
 weight_calcula_configuration:
   number_weight_evaluation_per_chain: 20
-  number_processors_used_weights: 36
+  number_processors_used_weights: 6
   stability_factor: 1e-8
   pareto_smoothing: True
 
@@ -80,9 +80,9 @@ significance_test_parameters:
   metric_type: loglike
   population_size: 100
   number_generations: 100
-  number_processors_used: 36
-  number_algorithm_executions: 200
-  number_noise_executions: 200
+  number_processors_used: 10
+  number_algorithm_executions: 50
+  number_noise_executions: 50
   list_number_genes: [ 2, 7 ]
 
 # ------------------- OUTPUT FILE TO GET THE RESULTS ------------------------ #

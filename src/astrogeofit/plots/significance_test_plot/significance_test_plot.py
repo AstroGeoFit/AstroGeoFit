@@ -113,6 +113,15 @@ def tool_plt_significance_test_results(
     def statistic_v3(x, x_0):
         return 2 * sp.stats.norm.sf(x.mean(), loc=x_0.mean(), scale=np.std(x_0, ddof=1))
 
+    if configuration_file_path == "basic_example":
+        configuration_file_path = "./examples/synthetic_data/results/analysis_parameters_syntehtic_data_results.yaml"
+    if configuration_file_path == "odp_926" or  configuration_file_path == "ODP_926":
+        configuration_file_path = "./examples/synthetic_data/results/configuration_ODP_926.yaml"
+    if configuration_file_path == "odp_1260" or  configuration_file_path == "ODP_1260" :
+        configuration_file_path = "./examples/synthetic_data/results/configuration_ODP_1260.yaml"
+    if configuration_file_path == "odp_1262" or  configuration_file_path == "ODP_1262":
+        configuration_file_path = "./examples/synthetic_data/results/configuration_ODP_1262.yaml"
+    
     parameter_analysis = obtain_significance_test_file(
         config_file_path=configuration_file_path,
         output_folder=folder_with_the_results,

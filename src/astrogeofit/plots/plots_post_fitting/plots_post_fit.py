@@ -277,7 +277,7 @@ def tool_plt_fit_summary_of_the_results(
     axs[2].set_title("Reconstructed Solutions Over Data")
     axs[2].legend()
     axs[-1].set_title("Correlation Coefficient Per Solution Over Depth")
-    axs[-1].set_xlabel("Depth")
+    axs[-1].set_xlabel("Depth (m)")
 
     # Save plots and data
     if types_of_saving and types_of_saving != []:
@@ -374,7 +374,7 @@ def tool_plt_fit_metric_per_number_of_knots(
     metric_sorted_resuts = results_fit["metric_sorted_resuts"]
     list_number_genes = genetic_algorithm_parameters["list_number_genes"]
     metric_type = genetic_algorithm_parameters["metric_type"]
-    fig, ax = plt.subplots(1, 1, figsize=(6.4, 1.8), dpi=300)
+    fig, ax = plt.subplots(1, 1, figsize=(8, 3), dpi=300)
     plt.subplots_adjust(
         left=0.1, right=0.95, bottom=0.15, top=0.88, wspace=0.1, hspace=0.7
     )
@@ -398,7 +398,7 @@ def tool_plt_fit_metric_per_number_of_knots(
         ax.axvline(number_generations * (i + 1))
         x_text = (0.2 + i) * number_generations
         y_text = np.percentile(ax.get_ylim(), 10)
-        ax.text(x_text, y_text, f"{list_number_genes[i]}", fontsize=7)
+        ax.text(x_text, y_text, f"{list_number_genes[i]}", fontsize=7, zorder=1000) #----YW
 
     plt.title(
         f"{number_algorithm_solutions} number of solutions (Population Size={population_size}, Number of Generations={number_generations})"
@@ -787,11 +787,12 @@ def tool_plt_fit_sedimentation_rate_per_depth(
     _, axs = plt.subplots(
         n_rows,
         n_cols,
-        figsize=(20, 10),
+        figsize=(10, 5),
         constrained_layout=True,
         sharex=True,
         sharey=True,
         dpi=100,
+        squeeze=False,
     )
     ax = axs.flatten()
     cm = plt.get_cmap("rainbow")
@@ -843,7 +844,7 @@ def tool_plt_fit_sedimentation_rate_per_depth(
     for i in range(n_rows):
         axs[i, 0].set_ylabel("Inverse SR[Myr/m]")
     for i in range(n_cols):
-        axs[-1, i].set_xlabel("Depth(m)")
+        axs[-1, i].set_xlabel("Depth (m)")
 
     # Save the plot in other formats if requested
     if types_of_saving and types_of_saving != []:
@@ -966,7 +967,7 @@ def tool_plt_fit_sedimentation_rate_depth_with_uncertainty(
         )
         invSR_pop.append(invSR_interpolate)
 
-    fig, ax = plt.subplots(1, 1, figsize=(20, 10), constrained_layout=True)
+    fig, ax = plt.subplots(1, 1, figsize=(8, 3), constrained_layout=True)
     invSR_pop = np.array(invSR_pop)
     plt.fill_between(
         data[0],
@@ -994,7 +995,7 @@ def tool_plt_fit_sedimentation_rate_depth_with_uncertainty(
     plt.legend()
 
     plt.xlim([data[0][0], data[0][-1]])
-    plt.xlabel("Depth")
+    plt.xlabel("Depth (m)")
     plt.ylabel("Inverse Sedimentation Rate (Myr/m)")
 
     # ====
@@ -1172,7 +1173,7 @@ def tool_plt_fit_frequency_spectrum(
     yf = sp.fft.fft(y_equ_spa)
 
     # Plot ====
-    fig, ax = plt.subplots(1, 1, figsize=(20, 10), constrained_layout=True)
+    fig, ax = plt.subplots(1, 1, figsize=(8, 4), constrained_layout=True)
     ax.plot(xf, 2.0 / N * np.abs(yf[0 : N // 2]))
     yf_magnitude = np.abs(yf[0 : N // 2])
     # Apply the scaling factor 2.0 / N
@@ -1204,7 +1205,7 @@ def tool_plt_fit_frequency_spectrum(
     secax = ax.secondary_xaxis("top", functions=(lambda f: f, lambda p: p))
     formatter = FuncFormatter(lambda x_val, tick_pos: f"{1/x_val*1000:.1f}")
     secax.xaxis.set_major_formatter(formatter)
-    secax.set_xlabel("Period (Myr)")
+    secax.set_xlabel("Period (kyr)")
     if types_of_saving and types_of_saving != []:
         if not output_path or output_path == "default" or output_path == "":
             output_path = parameters_analysis["output_folder"]
@@ -1305,10 +1306,10 @@ def tool_plt_fit_time_series(
     )
 
     fig, ax = plt.subplots(
-        2, 1, figsize=(20, 10), constrained_layout=False, sharex=False, dpi=300
+        2, 1, figsize=(8, 4), constrained_layout=False, sharex=False, dpi=300
     )
     plt.subplots_adjust(
-        left=0.05, right=0.95, bottom=0.15, top=0.9, wspace=0.1, hspace=0.3
+        left=0.1, right=0.95, bottom=0.15, top=0.9, wspace=0.1, hspace=0.5
     )
 
     # Get time scale from fitting results ====
@@ -1485,6 +1486,7 @@ def tool_data_calculate_eccentricity_parameters(
     positive_feedback: bool,
     number_of_knots_to_explore: Optional[int],
     name_eccentricity_solution: Optional[str],
+    script_path: str = "",
 ):
     optimization_results=results_fit["optimization_results"]
     frequency_values=data_model_parameters["frequency_values"]
@@ -1612,7 +1614,10 @@ def tool_data_calculate_eccentricity_parameters(
 
     # y_envelope = abs(sp.signal.hilbert(y_pred_prec))
 
-    temp_path = f"{os.getcwd()}/tmp"
+    if script_path == "":
+        temp_path = f"{os.getcwd()}/tmp"
+    else:
+        temp_path = f"{script_path}/tmp"
     temp_file = "temp_eccentricity_params"
     if os.path.exists(f"{temp_path}/{temp_file}.pickle"):
         os.remove(f"{temp_path}/{temp_file}.pickle")
@@ -1688,15 +1693,19 @@ def tool_plt_fit_ETP_signals_from_model(
     parameters_analysis: dict,
     types_of_saving: list,
     output_path: str,
+    script_path: str = "",
 ):
     frequency_values=data_model_parameters["frequency_values"]
-    temp_path = f"{os.getcwd()}/tmp/temp_eccentricity_params"
+    if script_path == "":
+        temp_path = f"{os.getcwd()}/tmp/temp_eccentricity_params"
+    else:
+        temp_path = f"{script_path}/tmp/temp_eccentricity_params"
     results_dict = data_manager.load_dictionary_from_pickle(
         file_path=f"{temp_path}.pickle"
     )
     times_inferred = results_dict["times_inferred"]
     # Plot ====
-    fig, ax = plt.subplots(1, 1, figsize=(12, 4), constrained_layout=True, sharex=True)
+    fig, ax = plt.subplots(1, 1, figsize=(10, 4), constrained_layout=True, sharex=True)
     y_text = np.percentile(ax.get_ylim(), 90)
     all_ys = []
     if frequency_values["use_precession"]:
@@ -1842,7 +1851,10 @@ def tool_plt_fit_eccentricity_mswd_plot(
         logger.error("No Eccentricity Solution was provided. The plot can't be processed.")
         return
     frequency_values=data_model_parameters["frequency_values"]
-    temp_path = f"{os.getcwd()}/tmp/temp_eccentricity_params"
+    if script_path == "":
+        temp_path = f"{os.getcwd()}/tmp/temp_eccentricity_params"
+    else:
+        temp_path = f"{script_path}/tmp/temp_eccentricity_params"
     results_dict = data_manager.load_dictionary_from_pickle(
         file_path=f"{temp_path}.pickle"
     )
@@ -1899,7 +1911,7 @@ def tool_plt_fit_eccentricity_mswd_plot(
     #t0_ecc_MSWD, t0_env_MSWD
 
     # Plot
-    fig, axs = plt.subplots(2, 1, figsize=(8, 6), constrained_layout=True)
+    fig, axs = plt.subplots(2, 1, figsize=(8, 4), constrained_layout=True)
 
     # For directly derived eccentricity
     ax = axs[0]
@@ -2085,7 +2097,10 @@ def tool_plt_fit_correlation_eccentricity_and_solution(
         logger.error("No Eccentricity Solution was provided. The plot can't be processed.")
         return
     frequency_values=data_model_parameters["frequency_values"]
-    temp_path = f"{os.getcwd()}/tmp/temp_eccentricity_params"
+    if script_path == "":
+        temp_path = f"{os.getcwd()}/tmp/temp_eccentricity_params"
+    else:
+        temp_path = f"{script_path}/tmp/temp_eccentricity_params"
     results_dict = data_manager.load_dictionary_from_pickle(
         file_path=f"{temp_path}.pickle"
     )
@@ -2121,7 +2136,7 @@ def tool_plt_fit_correlation_eccentricity_and_solution(
     inds = (e3_data[0] >= t0) & (e3_data[0] <= tf)
     time_e3, e3 = e3_data[:, inds]
     e3 = (e3 - e3.mean()) / e3.std()
-    fig, axs = plt.subplots(2, 1, figsize=(16, 4), constrained_layout=True, dpi=300)
+    fig, axs = plt.subplots(2, 1, figsize=(10, 4), constrained_layout=True, dpi=300)
 
     # For directly derived eccentricity ----------------------------------------
     if frequency_values["use_eccentricity"]:

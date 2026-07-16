@@ -176,7 +176,7 @@ def tool_plt_mcmc_SR_per_num_knots(
     fig, axs = plt.subplots(
         n_rows,
         n_cols,
-        figsize=(15, 5),
+        figsize=(12, 4),
         constrained_layout=True,
         sharex=True,
         sharey=True,
@@ -254,7 +254,7 @@ def tool_plt_mcmc_SR_per_num_knots(
 
     # Set the x-label for the last row
     for j in range(n_cols):
-        axs[(n_rows - 1) * n_cols + j].set_xlabel("Depth")
+        axs[(n_rows - 1) * n_cols + j].set_xlabel("Depth [m]")
     if types_of_saving and types_of_saving != []:
         if not output_path or output_path == "default" or output_path == "":
             output_path = parameters_analysis["output_folder"]
@@ -422,12 +422,12 @@ def tool_plt_mcmc_aic_logprob_and_loglike_per_number_knots(
         
         
     fig, ax = plt.subplots(1, 1)
-    plt.subplots_adjust(left=0.1,right=0.85,bottom=0.15,
+    plt.subplots_adjust(left=0.15,right=0.85,bottom=0.15,
                     top=0.9)
     ax2 = ax.twinx()
     ax2.plot(list_n_genes, logProb, ".-", color="r",label='posterior') # YW
     ax2.plot(list_n_genes, loglike, ".-", color="b",label='likelihood') # YW
-    ax2.legend(loc='lower right')
+    ax2.legend(loc='best')
     ax2.set_ylabel('log probablity', color="r", rotation=-90, verticalalignment='bottom') # YW
     ax.plot(list_n_genes, aics - aics[0], ".-", color="k")
     ax.set_xlabel("Number of Knots")
@@ -595,6 +595,8 @@ def tool_plt_mcmc_aic_and_r2_per_number_knots(
         r2s[k] = r2_score(data[1], y_pred)
 
     fig, ax = plt.subplots(1, 1)
+    plt.subplots_adjust(left=0.15,right=0.85,bottom=0.15,
+                    top=0.9)
     ax2 = ax.twinx()
     ax2.plot(list_n_genes, r2s, ".-", color="r")
     ax2.set_ylabel("r$^2$", color="r", rotation=0)
@@ -786,7 +788,7 @@ def tool_plt_mcmc_eccentricity_correlation_with_solution(
     if not name_eccentricity_solution or name_eccentricity_solution == "":
         name_eccentricity_solution = "Astronomical Solution"
     fig, axs = plt.subplot_mosaic(
-        [["a)", "b)"], ["c)", "c)"]], constrained_layout=True, figsize=(18, 6)
+        [["a)", "b)"], ["c)", "c)"]], constrained_layout=True, figsize=(12, 4)
     )
 
     for label, ax in axs.items():
@@ -1269,7 +1271,7 @@ def tool_plt_mcmc_summary_of_results(
     fig, axs = plt.subplot_mosaic(
         [["a)"], ["b)"], ["c)"], ["d)"], ["e)"]],
         constrained_layout=True,
-        figsize=(17, 10),
+        figsize=(12, 10),
     )
 
     ax_spectrum = axs["a)"]
@@ -1278,6 +1280,21 @@ def tool_plt_mcmc_summary_of_results(
     ax_invSR = axs["c)"]
     ax_data = axs["d)"]
     ax_decompose = axs["e)"]
+    
+    for label, ax in axs.items():
+        # label physical distance in and down:
+        # xtext = 0
+        trans = mtransforms.ScaledTranslation(10 / 72, -5 / 72, fig.dpi_scale_trans)
+        ax.text(
+            0,
+            1.0,
+            label,
+            transform=ax.transAxes + trans,
+            fontsize="medium",
+            verticalalignment="top",
+            fontfamily="serif",
+            bbox=dict(facecolor="0.7", edgecolor="none", pad=3.0),
+        )
 
     ###########################################################
     ################### SPECTRUM PLOT #########################
@@ -1366,7 +1383,8 @@ def tool_plt_mcmc_summary_of_results(
         )
     print(fs_labels)
     for i, (f, f_label) in enumerate(zip(calculated_frequencies_map, fs_labels)):
-        dx = -1 if f_label in [f"$g_3-g_2$", f"$g_3-g_5$", "$g_1+k$", "$g_3+k$"] else 1
+        dx = -5 if f_label in [f"$g_3-g_2$", f"$g_3-g_5$", "$g_5+k$", "$g_3+k$", "$s_3+k$"] else 2
+        if f_label == "$g_1+k$": dx=0
         if f_label in prec_labels:
             color = colors_science[3]
         elif f_label in ecc_labels:
@@ -1401,7 +1419,7 @@ def tool_plt_mcmc_summary_of_results(
                 zorder=-i,
             )
         ax_spectrum.axvline(
-            f / 2 / np.pi, linestyle="--", color=color, zorder=-10, alpha=0.5
+            f / 2 / np.pi, linestyle="--", color=color, zorder=-100, alpha=0.5
         )
         
     ax_spectrum.tick_params(labelbottom=True)
@@ -1497,7 +1515,7 @@ def tool_plt_mcmc_summary_of_results(
     )
     ax_invSR.plot(data[0], invSR_MAP, color="k", label="MAP")
     ax_invSR.tick_params(labelbottom=False)
-    ax_invSR.legend()
+    ax_invSR.legend(loc="upper right")
     ax_invSR.set_ylabel("SR$^{-1}$ [Myr/m]")
     ax_invSR.sharex(ax_decompose)
 
@@ -1574,7 +1592,7 @@ def tool_plt_mcmc_summary_of_results(
         ax_decompose.set_ylim(min_y - buffer, max_y + buffer)
 
     # Final labels and legend
-    ax_decompose.set_xlabel("Depth")
+    ax_decompose.set_xlabel("Depth [m]")
     ax_decompose.legend(loc="lower right")
 
     if types_of_saving and types_of_saving != []:

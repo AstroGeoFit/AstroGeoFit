@@ -7,15 +7,15 @@ data_set:
   header: True
 
 age_depth_model_data:
-  data_path: ./examples/ODP_1262/data/Table_S1_AgeModel.tab
-  depth_column_name: Depth
-  age_column_name: Age
-  skiprows: 17
-  delimiter: \s+
+  data_path: ./examples/ODP_1262/data/age_model_paper3_1262_Westerhold2020.txt
+  depth_column_name: depth
+  age_column_name: age
+  skiprows: 0
+  delimiter: ","
   header: True
   
 eccentricity_solution_data:
-  data_path: ./examples/ODP_1260/data/La2010b_ecc3L.dat
+  data_path: ./examples/ODP_1262/data/La2010b_ecc3L.dat
   age_column_name: 
   eccentricity_column_name: 
   skiprows: 0
@@ -51,7 +51,7 @@ genetic_algorithm_parameters:
   number_generations: 300
   number_processors_used: 50
   number_algorithm_solutions: 50
-  list_number_genes: [2, 8, 12, 16, 20, 24, 28, 32, 36]
+  list_number_genes: [2, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96]
 
 mcmc_parameters:
   length_mcmc_chains: 5000
@@ -59,7 +59,7 @@ mcmc_parameters:
   thin: 50
   number_processors_used_mcmc: 30
   number_mcmc_solutions: 30
-  list_of_genes_mcmc: [2, 8, 12, 16, 20, 24, 28, 32, 36]
+  list_of_genes_mcmc: [2, 12, 24, 36, 48, 60, 72, 84, 96]
   prior_distributions: 
     p0_distribution: uniform
     gi_distribution: gaussian
@@ -87,5 +87,5 @@ significance_test_parameters:
   list_number_genes: [2, 8, 12, 16, 20, 24]
 
 # ------------------- OUTPUT FILE TO GET THE RESULTS ------------------------ #
-output_folder: ../examples/ODP_1262/results
+output_folder: ./examples/ODP_1262/results
 output_file_name: results_ODP_1262
